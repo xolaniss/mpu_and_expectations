@@ -15,7 +15,7 @@ bibliography: references.bib
 
 Since the Global Financial Crisis, uncertainty has re-emerged as a first-order driver of macroeconomic outcomes, affecting investment, hiring, and consumption decisions [@bloom2009]. A growing strand of this literature focuses specifically on *monetary policy uncertainty* (MPU) -- uncertainty about the future stance and reaction function of central banks -- and its effect on the formation of inflation expectations [@arce-alfaro2023]. Where the private sector is less certain about the monetary authority's future actions, it should also be less certain, and more disperse, in its inflation forecasts. For a small, open, inflation-targeting economy such as South Africa, this channel is compounded by exchange-rate uncertainty and spillovers from US monetary policy uncertainty, both of which have been shown to matter for domestic volatility and expectations formation [@mumtaz2013; @bianchi2023].
 
-Despite this, little empirical work has examined how MPU -- domestic and foreign -- relates to the *cross-sectional dispersion* of inflation expectations across different types of economic agents in South Africa. Disagreement (dispersion) is itself informative: it proxies the confidence agents place in their own forecasts and, unlike point forecasts, captures how uncertainty is transmitted unevenly across the economy.
+Despite this, little empirical work has examined how MPU -- domestic and foreign -- relates to the *cross-sectional dispersion* of inflation expectations across different types of economic agents in South Africa. Disagreement (dispersion) is itself informative. It proxies the confidence agents place in their own forecasts and, unlike point forecasts, captures how uncertainty is transmitted unevenly across the economy.
 
 ## Research Questions
 
@@ -30,8 +30,8 @@ The analysis draws on quarterly data assembled from the following sources:
 | Series | Source | Frequency |
 |---|---|---|
 | Dispersion (SD) of inflation expectations, by sector (business, finance, labour) and horizon | BER Inflation Expectations Survey | Quarterly |
-| South African monetary policy uncertainty | Calculated market based measure, | Daily, aggregated |
-| Alternative South African monetary policy uncertainty | Codera news based measure  | Daily, aggregated |
+| South African monetary policy uncertainty | Calculated market-based measure | Daily, aggregated |
+| Alternative South African monetary policy uncertainty | Codera news-based measure | Daily, aggregated |
 | US monetary policy uncertainty | Baker, Bloom & Davis EPU -- monetary policy category | Monthly, aggregated |
 | USD/ZAR exchange-rate uncertainty | Own GARCH(1,1) conditional volatility, USD/ZAR daily returns | Daily, aggregated |
 
@@ -41,11 +41,11 @@ All series are harmonised to a common quarterly frequency, spanning approximatel
 ## Proposed Methodology
 
 1. **Uncertainty measurement:** estimate a GARCH(1,1) model on USD/ZAR log returns to derive a time-varying, model-based exchange-rate uncertainty proxy. 
-2. **Empirical model:** regress each sector-horizon dispersion measure on lagged domestic and US MPU, exchange-rate volatility, and relevant macro controls (e.g. inflation, policy rate, output gap), using HAC-robust standard errors to address serial correlation typical of overlapping quarterly survey data. A Bayesian approach is possible given some gaps in the responses of the BER survey.
+2. **Empirical model:** regress each sector-horizon dispersion measure on lagged domestic and US MPU, exchange-rate volatility, and relevant macro controls (e.g. inflation, policy rate, output gap), using HAC-robust standard errors to address serial correlation typical of overlapping quarterly survey data. We estimate a proxy Baysian SVAR - with SA MPU, US MPU and USDZAR volatility as external instruments
 3. **Robustness:** assess sensitivity to horizon and sector, and to alternative uncertainty proxies (news based measures); check series for stationarity and structural breaks given the long sample period (repo-era transition, 2008 GFC, 2020 pandemic).
 
 ## Contribution
 
-This project would provide the first South African evidence linking monetary policy uncertainty -- both domestic and US-sourced -- to disaggregated inflation-expectations dispersion, combining a model-based FX uncertainty measure with survey-based MPU and disagreement indices in a single, harmonised quarterly dataset.
+This paper contributes to the literature in four ways. First, it extends the monetary policy uncertainty–expectations literature [@mumtaz2013; @arce-alfaro2023] to an emerging-market, inflation-targeting setting where MPU is compounded by exchange-rate risk and external spillovers – a combination that has not been jointly estimated even though both channels are independently well documented for South Africa. Second, most existing work on expectations dispersion relies on published group averages; because this project uses BER respondent-level microdata for the business panel, it can construct genuine within-group cross-sectional dispersion rather than inferring disagreement from the spread of sector means -- a stronger and more direct proxy for disagreement. Third, by decomposing dispersion responses by both respondent sector (business, finance, labour) and forecast horizon (current year to five years ahead), the paper can speak to whether MPU erodes near-term forecast precision, long-run anchoring, or both – a distinction the existing literature (largely focused on single-horizon or point-forecast measures) does not resolve. Fourth, on methodology, using GARCH-based domestic policy-rate and exchange-rate uncertainty proxies alongside a news-based MPU series lets the paper cross-check a model-based and a perception-based measure of the same underlying uncertainty, addressing a known fragility in this literature [@bianchi2023] where results can be sensitive to how uncertainty itself is measured.
 
 ## References
