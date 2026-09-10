@@ -26,6 +26,7 @@ suppressWarnings(suppressMessages(suppressPackageStartupMessages({
   conflict_prefer("select", "dplyr")
   conflict_prefer("filter", "dplyr")
   conflict_prefer("lag", "dplyr")
+  conflict_prefer("reduce", "purrr")
   
   # graphs
   library(PNWColors)

@@ -114,15 +114,16 @@ cond_vol_df$quarter <- as.yearqtr(cond_vol_df$date)
 
 quarterly_vol_tbl <- aggregate(vol ~ quarter, data = cond_vol_df, FUN = mean) |> 
   as_tibble() |>  
-  mutate(quarter = as.Date(quarter))
+  mutate(quarter = as.Date(quarter)) |> 
+  rename(usd_zar_vol = vol)
 
 
 ##  Sanity-check plot -----------------------------------------
 quarterly_vol_gg <- 
   quarterly_vol_tbl |> 
-  ggplot(aes(x = quarter, y = vol)) + 
+  ggplot(aes(x = quarter, y = usd_zar_vol)) + 
   geom_line() + 
-  labs(title = "Quarterly Volatility", x = "Quarter", y = "Volatility") +
+  labs(title = "Quarterly Volatility", x = "", y = "Volatility") +
   theme_minimal() +
   scale_x_date(
     date_breaks = "2 years",
