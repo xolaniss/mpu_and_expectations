@@ -8,25 +8,31 @@ source(here("packages.R"))
 source(here("Functions", "fx_plot.R"))
 
 # Import -------------------------------------------------------------
+news_based_mpu_tbl <- 
+  read_excel(here("Data", "MPuncertainty.xlsx")) |> 
+  rename(
+    date = 1,
+    news_based_mpu = 2
+  ) |> 
+  mutate(date = as.Date(date)) |> 
+  summarise_by_time(date, "quarter", news_based_mpu = mean(news_based_mpu, na.rm = TRUE))
 
-
-# Cleaning -----------------------------------------------------------------
-
-
-# Transformations --------------------------------------------------------
-
-
-# EDA ---------------------------------------------------------------
 
 
 # Graphing ---------------------------------------------------------------
-
+news_based_mpu_gg <- 
+  news_based_mpu_tbl |> 
+  ggplot(aes(x = date, y = news_based_mpu)) +
+  geom_line() +
+  theme_minimal() +
+  labs(y = "News Based MPU", x = " ")
 
 # Export ---------------------------------------------------------------
-artifacts_ <- list (
-
+artifacts_mpu_measures <- list (
+news_based_mpu_tbl = news_based_mpu_tbl,
+news_based_gg =news_based_mpu_gg
 )
 
-write_rds(artifacts_, file = here("Outputs", "artifacts_.rds"))
+write_rds(artifacts_mpu_measures, file = here("Outputs", "artifacts_mpu_measures.rds"))
 
 
