@@ -14,7 +14,7 @@ us_mpu_tbl <-
   rename(
     date = 1,
     us_mpu = 2
-  ) |> 
+  ) 
   summarise_by_time(date, .by = "quarter", us_mpu = mean(us_mpu, na.rm = TRUE))
 
 # Graphing ---------------------------------------------------------------

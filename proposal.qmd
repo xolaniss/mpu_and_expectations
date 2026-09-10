@@ -30,8 +30,8 @@ The analysis draws on quarterly data assembled from the following sources:
 | Series | Source | Frequency |
 |---|---|---|
 | Dispersion (SD) of inflation expectations, by sector (business, finance, labour) and horizon | BER Inflation Expectations Survey | Quarterly |
-| South African monetary policy uncertainty | Own GARCH(1,1) conditional volatility, policy rate  | Monthly, aggregated |
-| Alternative South African monetary policy uncertainty | Codera news based measure  | Monthly, aggregated |
+| South African monetary policy uncertainty | Calculated market based measure, | Daily, aggregated |
+| Alternative South African monetary policy uncertainty | Codera news based measure  | Daily, aggregated |
 | US monetary policy uncertainty | Baker, Bloom & Davis EPU -- monetary policy category | Monthly, aggregated |
 | USD/ZAR exchange-rate uncertainty | Own GARCH(1,1) conditional volatility, USD/ZAR daily returns | Daily, aggregated |
 
@@ -40,7 +40,7 @@ All series are harmonised to a common quarterly frequency, spanning approximatel
 
 ## Proposed Methodology
 
-1. **Uncertainty measurement:** estimate a GARCH(1,1) model on USD/ZAR log returns to derive a time-varying, model-based exchange-rate uncertainty proxy. A similar approach for the MPU.
+1. **Uncertainty measurement:** estimate a GARCH(1,1) model on USD/ZAR log returns to derive a time-varying, model-based exchange-rate uncertainty proxy. 
 2. **Empirical model:** regress each sector-horizon dispersion measure on lagged domestic and US MPU, exchange-rate volatility, and relevant macro controls (e.g. inflation, policy rate, output gap), using HAC-robust standard errors to address serial correlation typical of overlapping quarterly survey data. A Bayesian approach is possible given some gaps in the responses of the BER survey.
 3. **Robustness:** assess sensitivity to horizon and sector, and to alternative uncertainty proxies (news based measures); check series for stationarity and structural breaks given the long sample period (repo-era transition, 2008 GFC, 2020 pandemic).
 
