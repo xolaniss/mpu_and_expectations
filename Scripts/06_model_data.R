@@ -17,7 +17,8 @@ model_data_tbl <-
   # instead of "date"
   map(~rename(.x, date = any_of("quarter"))) |> 
   reduce(full_join, by = "date") |> 
-  mutate(date = as.Date(date))
+  mutate(date = as.Date(date)) |> 
+  arrange(date)
 
 # Export ---------------------------------------------------------------
 artifacts_model_data <- list (
